@@ -1,9 +1,15 @@
 import { Component } from 'react';
+import Header from '../components/Header';
 
 class ProfileEdit extends Component {
   render() {
     return (
-      <div data-testid="page-profile-edit">Login</div>
+      <div data-testid="page-profile-edit">
+        Profile-edit
+        <div>
+          <Header />
+        </div>
+      </div>
     );
   }
 }
