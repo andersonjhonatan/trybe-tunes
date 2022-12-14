@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import Search from './Pages/Search';
@@ -8,7 +8,33 @@ import Profile from './Pages/Profile';
 import ProfileEdit from './Pages/ProfileEdit';
 import NotFound from './Pages/NotFound';
 
-class App extends React.Component {
+class App extends Component {
+/*   state = {
+    namee: '',
+    isDisabled: true,
+  };
+
+  handleChange = (e) => {
+    this.setState({ namee: e.target.value });
+  };
+
+  handleClick = ({ target: { namee, value } }) => {
+    this.setState({ [namee]: value }, this.validaçao);
+  };
+
+  validaçao = () => {
+    const number = 3;
+    if (namee === 'namee') {
+      this.setState({
+        isDisabled: value.length < number,
+      });
+    }
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+  };
+ */
   render() {
     return (
       <BrowserRouter>
