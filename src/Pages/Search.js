@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Header from '../components/Header';
+import Pesquisar from '../components/Pesquisar';
 
 class Search extends Component {
   render() {
@@ -9,6 +10,9 @@ class Search extends Component {
         <div>
           <Header />
         </div>
+        <section>
+          <Pesquisar />
+        </section>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
+import Navbar from './Navbar';
 
 class Header extends Component {
   state = {
@@ -31,11 +31,7 @@ class Header extends Component {
         ) : (
           <h1 data-testid="header-user-name">{carateres}</h1>
         )}
-        <nav>
-          <Link data-testid="link-to-search" to="/search">Search</Link>
-          <Link data-testid="link-to-favorites" to="/favorites">Favorites</Link>
-          <Link data-testid="link-to-profile" to="/profile">Profile</Link>
-        </nav>
+        <Navbar />
       </header>
     );
   }

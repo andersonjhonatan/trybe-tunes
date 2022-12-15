@@ -18,9 +18,8 @@ class Login extends Component {
       .then(() => history.push('/search'));
   };
 
-  handleChange = ({ target }) => {
+  handleChange = ({ target: { value } }) => {
     const number = 3;
-    const { value } = target;
     this.setState({ carateres: value,
     });
 
