@@ -31,7 +31,7 @@ class Search extends Component {
       this.setState({
         carateres: '',
         isLoading: false,
-        disc: [...pesquisa],
+        disc: pesquisa,
         pesquisaAlbum: carateres,
       }, () => {
         if (pesquisa.length === 0) {
