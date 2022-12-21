@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import propTypes from 'prop-types';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class MusicCard extends Component {
@@ -21,17 +21,29 @@ class MusicCard extends Component {
     });
   };
 
-  handleInput = ({ target: { type, checked, value } }) => {
-    const valor = type === 'checkbox' ? checked : value;
-    this.setState(
-      { isLoading: valor, check: valor },
-      async () => {
-        await addSong(checked);
+  handleInput = async ({ target: { checked } }) => {
+    if (checked) {
+      this.setState(
+        { isLoading: true },
+        async () => {
+          await addSong();
+          this.setState({
+            isLoading: false,
+            check: true,
+          });
+        },
+      );
+    } else {
+      this.setState({
+        isLoading: true,
+      }, async () => {
+        await removeSong(checked);
         this.setState({
+          check: false,
           isLoading: false,
         });
-      },
-    );
+      });
+    }
   };
 
   render() {
